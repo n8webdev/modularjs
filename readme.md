@@ -4,3 +4,4 @@ Tutorial from [learncode.academy](https://www.youtube.com/watch?v=HkFlM73G-hk&li
 
 ## Tips
 * #1 - [IIFE](http://gregfranko.com/blog/i-love-my-iife/);
+* #2 - The keyword 'this' in javascript references the object that owns the code where 'this' keyword is. It changes from scope when something is selected;
