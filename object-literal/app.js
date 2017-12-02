@@ -20,6 +20,7 @@
     bindEvents: function() {
       // .bind(this) makes it possible to run a function in the module's scope
       this.$button.on("click", this.addPerson.bind(this));
+      this.$ul.delegate('i.del', 'click', this.deletePerson.bind(this));
     },
     // use MustacheJS template engine
     render: function() {
@@ -35,19 +36,15 @@
       this.people.push(this.$input.val());
       this.render();
       this.$input.val('');
+    },
+    deletePerson: function(event) {
+      var $remove = $(event.target).closest('li');
+      var i = this.$ul.find('li').index($remove);
+      this.people.splice(i, 1);
+      this.render();
     }
   };
 
   people.init();
 
 })();
-
-// remove people
-$("#peopleModule").find("ul").delegate("i.del", "click", function(e) {
-  var $remove = $(e.target).closest("li");
-  var i = $("#peopleModule").find("ul").find("li").index($remove);
-
-  $remove.remove();
-
-  people.splice(i, 1);
-});
