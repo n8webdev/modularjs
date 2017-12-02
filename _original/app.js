@@ -1,3 +1,5 @@
+'use strict';
+
 var people = [];
 var template = $("#people-template").html();
 

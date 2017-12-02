@@ -1,5 +1,6 @@
 // IIFE - Immediately Invoked Function Expression - check readme #1
 (function(){
+  "use strict";
   // object literal module
   var people = {
     people: ['Nathan', 'Lari'],
